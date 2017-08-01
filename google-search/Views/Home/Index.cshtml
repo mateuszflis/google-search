@@ -1,0 +1,21 @@
+﻿@model IEnumerable<SearchItemViewModel>
+
+<form asp-controller="Home" asp-action="Index" method="get">
+    <p>
+        Search text: <input type="text" name="search">
+        <input type="submit" value="Search" />
+    </p>
+</form>
+
+@foreach (var item in Model)
+{
+    <div>
+    @Html.DisplayFor(modelItem => item.Title)
+    </div>
+
+    <div>
+        <a href="@item.Link">@item.Link</a>
+    </div>  
+    
+    <br/>
+}
